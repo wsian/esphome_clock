@@ -19,8 +19,8 @@ substitutions:
   mosi_pin: GPIO13
   cs_pin: GPIO15
   status_led_pin: GPIO2
-  #download_button_pin: GPIO0
-  #rotation_pin: GPIO16
+  download_button_pin: GPIO0
+  rotation_pin: GPIO16
   # time and date formats: https://esphome.io/components/time/?highlight=strftime#strftime and https://strftime.org/
   # time_format: "%H:%M" (13:25) / "%H:%M:%S" (13:25:59) / "%I:%M%p" (01:25PM) / "%l:%M%p" (1:25PM)
   time_format12: "%l:%M%p"
@@ -252,7 +252,7 @@ preferences:
 
 #i2c:
 #  sda: $sda_pin
-#  scl: $
+#  scl: $sda_pin
 #  scan: true
 #  id: i2cbus
 
@@ -317,8 +317,8 @@ display:
     cs_pin: $cs_pin
     num_chips: 4
     update_interval: 1s
-    reverse_enable: true # true for button-side up / false for down (be warned that if you change these 2 settings you may get a garbled display)
-    rotate_chip: 0 # 0 for button-side up (default) / 180 for down (you could switch them but then I would recommend go change the inverted settting for the gpio)
+    #reverse_enable: true # true for button-side up / false for down (be warned that if you change these 2 settings you may get a garbled display)
+    #rotate_chip: 0 # 0 for button-side up (default) / 180 for down (you could switch them but then I would recommend go change the inverted settting for the gpio)
     scroll_mode: continuous
     lambda: |-
       // Display the message if all conditions are met
