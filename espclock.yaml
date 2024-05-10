@@ -15,9 +15,9 @@ substitutions:
   # time_zone_alt_name: "AST"
   #scl_pin: GPIO4
   #sda_pin: GPIO5
-  clk_pin: GPIO14
-  mosi_pin: GPIO13
-  cs_pin: GPIO15
+  clk_pin: D6
+  mosi_pin: D8
+  cs_pin: D7
   status_led_pin: GPIO2
   download_button_pin: GPIO0
   rotation_pin: GPIO16
