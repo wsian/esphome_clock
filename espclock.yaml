@@ -1,9 +1,9 @@
 substitutions:
   name: led-pixelclock-blue
   friendly_name: Led-PixelClock-Blue
-  comment: "EHLPClock from Trip5"
+  comment: "EHLPClock"
   project_version: "2024.01.08"
-  project_name: Trip5.EspHomeLedPixelClock
+  project_name: EspHomeLedPixelClock
   waiting: "EHLPClock . . . " # shows when waiting for time
   # Time zone can be Olsen type ("Asia/Seoul") # Check https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   # Or it can be POSIX format: ("PST8PDT,M3.2.0/2:00:00,M11.1.0/2:00:00") - most can be viewed here: https://gist.github.com/alwynallan/24d96091655391107939
