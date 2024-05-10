@@ -83,7 +83,7 @@ font:
     id: default_font
     size: 8
     glyphs:  |
-      ! "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz°一二三四五六七八九十星期上下午月日天
+      ! "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz°一二三四五六七八九十星期上下午月天
 # If your clock is crashing, you can delete this section, go down to the display section, find message_font (once) and change it to default_font
   - file: fonts/MatrixLight8X.ttf
     id: message_font
