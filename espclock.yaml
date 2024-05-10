@@ -83,7 +83,7 @@ font:
     id: default_font
     size: 8
     glyphs:  |
-      ! "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz°오후전일월화수목금토요
+      ! "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz°一二三四五六七八九十星期上下午月日天
 # If your clock is crashing, you can delete this section, go down to the display section, find message_font (once) and change it to default_font
   - file: fonts/MatrixLight8X.ttf
     id: message_font
@@ -191,8 +191,8 @@ text_sensor:
       - append: ""
       - prepend: ""
       - substitute:
-        - "AM -> 오전"
-        - "PM -> 오후"
+        - "AM -> 上午"
+        - "PM -> 下午"
   - platform: template
     id: date_text
     name: "$friendly_name Replacement Date Text"
@@ -200,21 +200,21 @@ text_sensor:
     update_interval: never
     internal: true
     filters:
-      - append: "일"
+      - append: ""
       - prepend: ""
       - substitute:
-        - "Jan -> 1월"
-        - "Feb -> 2월"
-        - "Mar -> 3월"
-        - "Apr -> 4월"
-        - "May -> 5월"
-        - "Jun -> 6월"
-        - "Jul -> 7월"
-        - "Aug -> 8월"
-        - "Sep -> 9월"
-        - "Oct -> 10월"
-        - "Nov -> 11월"
-        - "Dec -> 12월"
+        - "Jan -> 一月"
+        - "Feb -> 二月"
+        - "Mar -> 三月"
+        - "Apr -> 四月"
+        - "May -> 五月"
+        - "Jun -> 六月"
+        - "Jul -> 七月"
+        - "Aug -> 八月"
+        - "Sep -> 九月"
+        - "Oct -> 十月"
+        - "Nov -> 十一月"
+        - "Dec -> 十二月"
   - platform: template
     id: dateA_text
     name: "$friendly_name Replacement Date A Text"
@@ -225,13 +225,13 @@ text_sensor:
       - append: ""
       - prepend: ""
       - substitute:
-        - "Sun -> 일요일"
-        - "Mon -> 월요일"
-        - "Tue -> 화요일"
-        - "Wed -> 수요일"
-        - "Thu -> 목요일"
-        - "Fri -> 금요일"
-        - "Sat -> 토요일"
+        - "Sun -> 星期天"
+        - "Mon -> 星期一"
+        - "Tue -> 星期二"
+        - "Wed -> 星期三"
+        - "Thu -> 星期四"
+        - "Fri -> 星期五"
+        - "Sat -> 星期六"
 
 output:
   - platform: esp8266_pwm
