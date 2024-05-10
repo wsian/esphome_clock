@@ -8,7 +8,7 @@ substitutions:
   # Time zone can be Olsen type ("Asia/Seoul") # Check https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   # Or it can be POSIX format: ("PST8PDT,M3.2.0/2:00:00,M11.1.0/2:00:00") - most can be viewed here: https://gist.github.com/alwynallan/24d96091655391107939
   # Read more about how to customize a POSIX format here: https://developer.ibm.com/articles/au-aix-posix/
-  time_zone: "KST-9"
+  time_zone: "MYT-8"
   # At some point, I figured out how to use alternate time zones... it's a bit weird but useful (and sticks on reboot) - I've commented out the relevant lines for now (check globals & switch)
   # If using Alternate Time Zones, you MUST use POSIX format for both time Zones not Olsen... you will also need the next two substitution lines:
   # time_zone_alt: "AST4ADT,M3.2.0,M11.1.0"
@@ -39,9 +39,9 @@ esphome:
     name: "$project_name"
     version: "$project_version"
   min_version: 2023.11.0
-  on_boot:
-    then:
-      - ds1307.read_time:
+  #on_boot:
+  #  then:
+  #    - ds1307.read_time:
 
 esp8266:
   board: esp12e
@@ -94,13 +94,11 @@ font:
 time:
   - platform: sntp
     id: my_time
-# If you would rather use Home Assistant as a time source, delete the above line and uncomment the next line (but sntp means you can take your clock anywhere)
-#  - platform: homeassistant
-    timezone: "$time_zone"
-    update_interval: 24h # This seems like the longest safe amount of time - actual configured update interval happens under Display
-    on_time_sync:
-      then:
-        - ds1307.write_time:
+    timezone: Asia/Kuala_Lumpur
+    servers:
+     - 0.pool.ntp.org
+     - 1.pool.ntp.org
+     - 2.pool.ntp.org
   - platform: ds1307 # even though it's a ds3231
     id: my_time_ds
     update_interval: never
