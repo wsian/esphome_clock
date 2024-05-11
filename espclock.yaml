@@ -3,7 +3,7 @@ substitutions:
   friendly_name: Led-PixelClock-Blue
   comment: "EHLPClock"
   project_version: "2024.01.08"
-  project_name: EspHomeLedPixelClock
+  project_name: Trip5.EspHomeLedPixelClock
   waiting: "EHLPClock . . . " # shows when waiting for time
   # Time zone can be Olsen type ("Asia/Seoul") # Check https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   # Or it can be POSIX format: ("PST8PDT,M3.2.0/2:00:00,M11.1.0/2:00:00") - most can be viewed here: https://gist.github.com/alwynallan/24d96091655391107939
@@ -44,7 +44,7 @@ esphome:
   #    - ds1307.read_time:
 
 esp8266:
-  board: esp12e
+  board: d1_mini_pro
   restore_from_flash: True
 
 wifi:
@@ -99,10 +99,10 @@ time:
      - 0.pool.ntp.org
      - 1.pool.ntp.org
      - 2.pool.ntp.org
-  - platform: ds1307 # even though it's a ds3231
-    id: my_time_ds
-    update_interval: never
-    timezone: "$time_zone"
+  #- platform: ds1307 # even though it's a ds3231
+  #  id: my_time_ds
+  #  update_interval: never
+  #  timezone: "$time_zone"
 
 api:
   reboot_timeout: 0s # Must be disabled to allow the Wifi enable/disable to function
@@ -317,8 +317,9 @@ display:
     cs_pin: $cs_pin
     num_chips: 4
     update_interval: 1s
-    #reverse_enable: true # true for button-side up / false for down (be warned that if you change these 2 settings you may get a garbled display)
-    #rotate_chip: 0 # 0 for button-side up (default) / 180 for down (you could switch them but then I would recommend go change the inverted settting for the gpio)
+    reverse_enable: false # true for button-side up / false for down (be warned that if you change these 2 settings you may get a garbled display)
+    rotate_chip: 0 # 0 for button-side up (default) / 180 for down (you could switch them but then I would recommend go change the inverted settting for the gpio)
+    flip_x: false
     scroll_mode: continuous
     lambda: |-
       // Display the message if all conditions are met
@@ -408,13 +409,13 @@ display:
       }
       it.intensity(id(brightness_level));
       // This next section allows the rotation sensor to work - need to directly change settings in the component: https://esphome.io/api/max7219_8h
-      if (id(rotation_mode).state == 1) {
-        id(matrix)->set_reverse(0);
-        id(matrix)->set_chip_orientation(2);
-      } else {
-        id(matrix)->set_reverse(1);
-        id(matrix)->set_chip_orientation(0);
-      }
+      //if (id(rotation_mode).state == 1) {
+      //  id(matrix)->set_reverse(0);
+      //  id(matrix)->set_chip_orientation(2);
+      //} else {
+      //  id(matrix)->set_reverse(1);
+      //  id(matrix)->set_chip_orientation(0);
+      //}
 
 
 interval:
