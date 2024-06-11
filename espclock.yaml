@@ -44,7 +44,7 @@ esphome:
   #    - ds1307.read_time:
 
 esp8266:
-  board: d1_mini_pro
+  board: d1_mini
   restore_from_flash: True
 
 wifi:
