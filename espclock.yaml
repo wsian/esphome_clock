@@ -145,13 +145,15 @@ mdns:
 
 logger:
 
-ota:
-  password: !secret ota_password
-
 web_server:
   port: 80
-  ota: true
+
+  #ota: true
   # include_internal: true # probably not necessary, as it will expose more than needed to the Web UI
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
 
 captive_portal:
 
